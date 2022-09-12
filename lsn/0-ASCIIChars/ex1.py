@@ -1,6 +1,10 @@
 def listOfChars(intList):
     lst = []
     # TODO: Take each integer from intList and add corresponding `chr`'d characters to `lst`
+    for i in range(len(intList)):
+        char = chr(intList[i])
+        lst.append(char)
+
     return lst
 
 

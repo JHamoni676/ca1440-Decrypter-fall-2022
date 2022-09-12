@@ -2,6 +2,13 @@ def scoreWord(word):
     score = 0
     # TODO: Score the word
     # HINT: Try out "a".isalpha() and "!".isalpha() in the REPL! `help(str.isalpha)` may also come in handy :)
+    lowerWord = word.lower()
+    for i in range(len(word)):
+        if lowerWord[i].isalpha():
+            score += ord(lowerWord[i]) - 97
+        else:
+            score += 0
+
     return score
 
 if __name__ == '__main__':

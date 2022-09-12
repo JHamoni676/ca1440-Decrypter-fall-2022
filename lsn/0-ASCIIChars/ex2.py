@@ -2,6 +2,9 @@ def listOfASCIIInts(charList):
     lst = []
     # TODO: convert a list of characters into a list of ints based on the
     #   characters ASCII values
+    for i in range(len(charList)):
+        char = ord(charList[i])
+        lst.append(char)
     return lst
 
 
