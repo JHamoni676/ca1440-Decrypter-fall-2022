@@ -11,6 +11,11 @@ def printContents1(file):
 
     `file` is an opened file object
     '''
+    fileList = file.readlines()
+    msg = ""
+    for i in range(len(fileList)):
+        msg += fileList[i]
+    print(msg, end="")
     pass
 
 
@@ -21,8 +26,9 @@ def printContents2(file):
 
     `file` is an opened file object
     '''
+    msg = file.read()
+    print(msg)
     pass
-
 
 def printTwice(filename):
     ''' 
@@ -38,11 +44,20 @@ def printTwice(filename):
         5:  Close the file
     f.close()
     '''
-
     # Double check that there are no extra newline characters being printed!
     # If everything *seems* right but you're failing the test, printing an extra
     #   a new-line is most likely the culprit.
     # Hint: What does the print function output at the `end`?
+
+    isValid = os.access(filename, os.R_OK)
+    if not isValid:
+        sys.exit(1)
+    else:
+        file = open(filename)
+        printContents1(file)
+        file.seek(0)
+        printContents2(file)
+        file.close()
 
     pass
 

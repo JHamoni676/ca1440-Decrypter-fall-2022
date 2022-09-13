@@ -10,6 +10,14 @@ def getFileSafely(path):
       be `access`ed, the program exits by calling `sys.exit(1)` after warning
       the user that `path` is not accessible.
     '''
+    isValid = os.access(path, os.R_OK)
+
+    if not isValid:
+        sys.exit(1)
+    else:
+        file = open(path)
+        return file
+
     pass
 
 if __name__ == '__main__':

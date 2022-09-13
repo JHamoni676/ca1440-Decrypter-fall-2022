@@ -12,6 +12,7 @@ def getFileAsString(file):
     return file.read()
 
 
+
 def printContentsOfFile(fileName):
     # TODO:
     # 0) Open the file specified by `fileName`
@@ -22,6 +23,10 @@ def printContentsOfFile(fileName):
         #   a new-line is most likely the culprit.
         # Hint: What does the print function output at the `end`?
     # 3) Close the file
+    file = open(fileName)
+    read = getFileAsString(file)
+    print(read)
+    file.close()
     pass
 
 if __name__ == '__main__':
