@@ -1,6 +1,10 @@
 def cleanSentence(sentence):
     result = []
     # TODO: Add the words *not* starting with `#` to the 'result' list
+    for i in range(len(sentence.split())):
+        if ord(sentence.split()[i][0]) != 35:
+            result.append(sentence.split()[i])
+
     return result
 
 if __name__ == '__main__':

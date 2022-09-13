@@ -4,6 +4,10 @@ def findWords(sentence):
     # for word in sentence...
         # *Hint Hint* The `split` method on strings may be useful...
         # `help(str.split)`
+    for i in range(len(sentence.split())):
+        if len(sentence.split()[i]) <= 5:
+            wordsToReturn.append(sentence.split()[i])
+
     return wordsToReturn
 
 

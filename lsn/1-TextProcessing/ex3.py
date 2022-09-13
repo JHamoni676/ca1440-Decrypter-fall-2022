@@ -2,6 +2,16 @@ def cleanSentenceTwoLists(sentence):
     clean = []
     dirty = []
     # TODO: Separate the supplied sentence into two lists of words
+    for i in range(len(sentence.split())):
+        if ord(sentence.split()[i][0]) != 35:
+            clean.append(sentence.split()[i])
+        else:
+            dirty.append(sentence.split()[i])
+
+    for i in range(len(dirty)):
+        strTemp = dirty[i].replace("#", "")
+        dirty[i] = strTemp
+
     return (clean, dirty)
 
 if __name__ == '__main__':

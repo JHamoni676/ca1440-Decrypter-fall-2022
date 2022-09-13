@@ -4,4 +4,5 @@
 |--------------|------------|--------------------
 | September 9  | 0.25 hours | Cloned the repository and got set up to be ready to work
 | September 12 | 0.30 hours | Worked through lesson 0
-| TOTAL        | 0.25 hours | Total time of all work done
+| September 12 | 0.45 hours | Finished lesson 1
+| TOTAL        | 1.5 hours  | Total time of all work done

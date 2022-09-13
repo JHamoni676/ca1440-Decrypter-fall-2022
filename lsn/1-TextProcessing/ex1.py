@@ -2,6 +2,8 @@ def everyOtherWord(sentence):
     result = ""
     # TODO: Make a function that returns a string containing every other word in
     # the given sentence
+    for i in range(1, len(sentence.split()), 2):
+        result += sentence.split()[i] + " "
     return result
 
 if __name__ == '__main__':
