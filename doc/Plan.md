@@ -1,26 +1,48 @@
 # Software Development Plan
 
-# Phase 0: Requirements Specification *(10%)*
+# Phase 0: Requirements Specification
 
 ## **Deliver:**
 
-*   A detailed written description of the problem this program aims to solve.
-*   Describe what a *good* solution looks like.
-    *   List what you already know how to do.
-    *   Point out any challenges that you can foresee.
+The Duckie Decrypter is a program that converts DuckieCrypt to readable text.
+
+*   The user is prompted to input the name of a file
+    *   If the file is missing or cannot be opened, an error message will be displayed
+    *   Or if the file contains only invalid DuckieCrypt
+    *   If the input is good, the message will be displayed correctly decrypted
 
 ## Documentation For This Phase
 
+### Things I already know how to do
 
-# Phase 1: System Analysis *(10%)*
+*   I know how to read files in Pythong
+*   I know how to split strings and read each individual character
+*   I know how to convert strings to all lower or upper case
+
+### Things I don't know how to do
+
+*  
+
+# Phase 1: System Analysis
 
 ## **Deliver:**
 
-*   List all of the data that is used by the program, making note of where it comes from.
-*   Explain what form the output will take.
-*   Describe what algorithms and formulae will be used (but don't write them yet).
+### Input
 
-## Documentation For This Phase
+*   Data used by this program will be entered as a filepath to point to the file which will be used to decyrpt
+
+### Output
+
+*   Output will be:
+    *   An error message for invalid file paths or unable to access the file
+    *   No output will be printed if there is only invalid DuckieCrypt
+    *   Correctly decrypted output if a file contains both all valid Duckiecrypt or a mixture of both valid and invalid crypt
+
+### Algorithms
+
+*   An algorithm to determine if the filepath is valid or the file is accessible
+*   An algorithm that converts duckiecrypt to readable output
+*   An algorithm that removes invalid input duckiecrypt
 
 
 # Phase 2: Design *(30%)*
@@ -35,7 +57,13 @@
     *   Explain what happens in the face of good and bad input.
     *   Write a few specific examples that occurred to you.
 
-## Documentation For This Phase
+In the system analysis, it was decided that the program deal with three inputs
+
+*   No input
+*   Valid input
+*   Invalid input
+
+### Functions that deal with no input
 
 
 # Phase 3: Implementation *(15%)*

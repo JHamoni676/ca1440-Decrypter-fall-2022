@@ -186,9 +186,9 @@ DuckieCrypt character.
 
 ### Group C
 
-| Character      | DuckieCrypt Translation
-| :------------- | :---------------------
-| `{`            | `+C0`
-| `\|`           | `+C1`
-| `}`            | `+C2`
-| `~`            | `+C3`
+| Character     | DuckieCrypt Translation
+|:--------------| :---------------------
+| `{`           | `+C0`
+| `\`           | `+C1`
+| `}`           | `+C2`
+| `~`           | `+C3`
