@@ -2,7 +2,7 @@
 
 # Phase 0: Requirements Specification
 
-## **Deliver:**
+## Documentation
 
 The Duckie Decrypter is a program that converts DuckieCrypt to readable text.
 
@@ -11,17 +11,18 @@ The Duckie Decrypter is a program that converts DuckieCrypt to readable text.
     *   Or if the file contains only invalid DuckieCrypt
     *   If the input is good, the message will be displayed correctly decrypted
 
-## Documentation For This Phase
 
 ### Things I already know how to do
 
-*   I know how to read files in Pythong
+*   I know how to read files in Python
 *   I know how to split strings and read each individual character
 *   I know how to convert strings to all lower or upper case
+*   I know how to use if statements as validation
+*   I know how to slice strings
 
 ### Things I don't know how to do
 
-*  
+ 
 
 # Phase 1: System Analysis
 
@@ -35,26 +36,27 @@ The Duckie Decrypter is a program that converts DuckieCrypt to readable text.
 
 *   Output will be:
     *   An error message for invalid file paths or unable to access the file
-    *   No output will be printed if there is only invalid DuckieCrypt
-    *   Correctly decrypted output if a file contains both all valid Duckiecrypt or a mixture of both valid and invalid crypt
+    *   No output will be printed if there is only invalid duckie crypt
+    *   Correctly decrypted output if a file contains both all valid duckie crypt or a mixture of both valid and invalid crypt
 
 ### Algorithms
 
 *   An algorithm to determine if the filepath is valid or the file is accessible
-*   An algorithm that converts duckiecrypt to readable output
-*   An algorithm that removes invalid input duckiecrypt
+*   An algorithm that converts duckie crypt to readable output
+*   An algorithm that converts invaldi duckie crypt to empty strings
 
 
-# Phase 2: Design *(30%)*
+# Phase 2: Design
 
 
 In the system analysis, it was decided that the program deal with three inputs
 
-*   No input
 *   Valid input
 *   Invalid input
 
-
+### Converts duckie crypt with the "_" tag to lowercase letters
+*   Takes a duckie crypt character code as a string
+*   Returns a readable string
 ````
 def converToLower(charCode):
     remove index[0] from charCode
@@ -64,7 +66,9 @@ def converToLower(charCode):
     return new string
 
 ````
-
+### Converts duckie crypt with the "^" tag to uppercase letters
+*   Takes a duckie crypt character code as a string
+*   Returns a readable string
 ````
 def convertToUpper(charCode):
     remove index[0] from charCode
@@ -73,7 +77,9 @@ def convertToUpper(charCode):
     pass into chr() = new string
     return new string
 ````
-
+### Converts duckie crypt with the "+" tag to special characters
+*   Takes a duckie crypt character code as a string
+*   Returns a readable string
 ````
 def convertToSpecialChar(charCode):
     checks if character is valid duckieCrypt
@@ -100,7 +106,16 @@ def convertToSpecialChar(charCode):
     else:
         return "" 
 ````
-
+### Separates duckie crypt character codes into different categories
+*   Takes a duckie crypt character code as a string
+*   Categorizes the character code into:
+  *   Uppercase letters
+  *   Lowercase letters
+  *   Special characters
+*   Returns the character code being passed into the appropriate converter:
+  *   convertToUpper()
+  *   convertToLower()
+  *   convertToSpecialChar()
 ````
 def decryptCharacter(character):
     for loop to split character to know whether to feed to
@@ -114,7 +129,7 @@ def decryptCharacter(character):
     else:
         return ""
 ````
-
+### Splits a large string into a list of character codes
 ````
 def decryptLine(line):
     initialize empty string output = ""
@@ -122,7 +137,7 @@ def decryptLine(line):
         output += decryptCharacter(line[i])
     return outpu
 ````
-
+### Validates path files and opens the file if valid
 ````
 def getFile(pathToFile):
     checks if the filepath exists
@@ -134,31 +149,26 @@ def getFile(pathToFile):
 ````
 
 
-# Phase 3: Implementation *(15%)*
-
-## **Deliver:**
-
-*   (More or less) working Python code in `src/`.
-*   Note any relevant and interesting events that happened while you wrote the code.
-    *   e.g. things you learned, things that didn't go according to plan
-    *   If you have nothing of note in this section, **note that you had nothing to note here, do not leave it blank.**
+# Phase 3: Implementation
 
 ## Documentation For This Phase
 
+*   Refer to working code in ../src/duckieDecrypter.py
 
-# Phase 4: Testing & Debugging *(30%)*
+# Phase 4: Testing & Debugging
 
-## **Deliver:**
+## **Documentation For This Phase:**
 
-*   A set of test cases that you have personally run on your computer.
-    *   Include a description of what happened for each test case.
-    *   For any bugs discovered, describe their cause and remedy.
-*   Write your test cases in plain language such that a non-coder could run them and replicate your experience.
+After finishing the program the decoder was failing when passing in invalid0.txt. After adding validation I was using the & symbol instead of
+"and" in the validation if statements.
 
-## Documentation For This Phase
+When testing with ../data/testing/invalid1.txt I found that I did not have validation for the special characters to make
+make sure the ascii code stays within the valid duckie crypt bounds.
 
+When testing with ../data/testing/invalid2.txt I found that the program did not handle a character code
+that did not have a number at the end of a special character identification code
 
-# Phase 5: Deployment *(5%)*
+# Phase 5: Deployment
 
 ## **Deliver:**
 

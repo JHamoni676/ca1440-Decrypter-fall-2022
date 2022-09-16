@@ -24,6 +24,9 @@
 # INDENTATION, INDETERMINATION, INTOXICATION, INDOCTRINATION, INTOLERANCE,  	    	       
 # INDULGENCE, INDELICATENESS, INDISCRETION, INEFFECTIVENESS OR IN CONNECTION  	    	       
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+#/home/jharmon676/cs1440-assn1/data/mst1.txt
+
 import os
 # Feel free to start from scratch, or repurpouse any of these suggested
 #   functions! The world is yours. Well, maybe that was a bit of an over  	    	       
@@ -81,12 +84,15 @@ PARAMETERS:
 
 RETURNS:  	    	       
   Returns a single decrypted character OR an empty string.  	    	       
-    '''  	    	       
-    # if charCode.isdigit(): ...
-
-
-
-
+    '''
+    updatedChar = charCode[1:]
+    intChar = int(updatedChar)
+    if 25 >= intChar >= 0:
+        asciiCode = intChar + 97
+        string = chr(asciiCode)
+        return string
+    else:
+        return ""
     pass  	    	       
 
 
@@ -103,9 +109,14 @@ PARAMETERS:
 RETURNS:  	    	       
   Returns a single decrypted character OR an empty string.  	    	       
     '''
-
-
-
+    updatedChar = charCode[1:]
+    intChar = int(updatedChar)
+    if 25 >= intChar >= 0:
+        asciiCode = intChar + 65
+        string = chr(asciiCode)
+        return string
+    else:
+        return ""
     pass  	    	       
 
 
@@ -123,24 +134,25 @@ RETURNS:
   Returns a single decrypted character OR an empty string.  	    	       
     '''
     updatedChar = charCode[1:]
-    if ord(updatedChar[0]) == 65:
-        finalCode= updatedChar[1:]
-        asciiCode = int(finalCode) + 32
-        stringA = chr(asciiCode)
-        return stringA
-    elif ord(updatedChar[0]) == 66:
-        finalCode = updatedChar[1:]
-        asciiCode = int(finalCode) + 91
-        stringB = chr(asciiCode)
-        return stringB
-    elif ord(updatedChar[0]) == 67:
-        finalCode = updatedChar[1:]
-        asciiCode = int(finalCode) + 123
-        stringC = chr(asciiCode)
-        return stringC
-    else:
+    finalCode = updatedChar[1:]
+    if len(finalCode) < 1:
         return ""
-
+    else:
+        intCode = int(finalCode)
+        if ord(updatedChar[0]) == 65 and 32 >= intCode >= 0:
+            asciiCode = intCode + 32
+            stringA = chr(asciiCode)
+            return stringA
+        elif ord(updatedChar[0]) == 66 and 5 >= intCode >= 0:
+            asciiCode = intCode + 91
+            stringB = chr(asciiCode)
+            return stringB
+        elif ord(updatedChar[0]) == 67j and 4 >= intCode >= 0:
+            asciiCode = intCode + 123
+            stringC = chr(asciiCode)
+            return stringC
+        else:
+            return ""
     pass  	    	       
 
 
@@ -156,7 +168,6 @@ PARAMETERS:
 RETURNS:  	    	       
   A single character that is the decrypted DuckieCrypt character OR an empty  	    	       
     string.  	    	       
-
     '''  	    	       
     #HINT: "^23"[1:] == "23"
     charValue = ord(character[0])
@@ -183,12 +194,10 @@ PARAMETERS:
 RETURNS:  	    	       
   A string that is the decrypted text.  	    	       
     '''
-
     output = ""
-    print(line)
-    for i in range(len(line)):
-        #output += decryptCharacter(line[i])
-        output += line[i]
+    splitLine = line.split()
+    for i in range(len(splitLine)):
+        output += decryptCharacter(splitLine[i])
     return output  	    	       
 
 
@@ -215,7 +224,6 @@ RETURNS:
     else:
         file = open(pathToFile)
         return file
-
     pass
 
 
@@ -238,7 +246,8 @@ RETURNS:
     ###     the provided code below so it works.  	    	       
     file = getFile(filePath)  	    	       
     for line in file.readlines():  	    	       
-        print(decryptLine(line))  	    	       
+        print(decryptLine(line))
+    file.close()
     # Should I file.close() this?  	    	       
 
 
