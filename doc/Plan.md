@@ -63,7 +63,50 @@ In the system analysis, it was decided that the program deal with three inputs
 *   Valid input
 *   Invalid input
 
-### Functions that deal with no input
+````
+def sendError(charCode):
+    
+
+````
+
+````
+def converToLower()
+
+````
+
+````
+def convertToUpper()
+````
+
+````
+def convertToSpecialChar(charCode):
+````
+
+````
+def decryptCharacter(character):
+    for loop to split character to know whether to feed to
+    special, upper, or lower
+
+    calls decrypt[CONVERTFUNCTIONS]
+````
+
+````
+def decryptLine(line):
+    for loop to separate line by spaces
+        builds a list of valid characters
+    
+    
+````
+
+````
+def getFile(pathToFile):
+    checks if the filepath exists
+    if it does exist:
+        create a file object with open(filePath)
+        returns opened file
+    else:
+        exits program
+````
 
 
 # Phase 3: Implementation *(15%)*

@@ -81,7 +81,11 @@ PARAMETERS:
 RETURNS:  	    	       
   Returns a single decrypted character OR an empty string.  	    	       
     '''  	    	       
-    # if charCode.isdigit(): ...  	    	       
+    # if charCode.isdigit(): ...
+
+
+
+
     pass  	    	       
 
 
@@ -169,7 +173,9 @@ RETURNS:
     '''  	    	       
     # os.access might be helpful here!  	    	       
     # I need to open(...) something...  	    	       
-    # return file, I think?  	    	       
+    # return file, I think?
+
+
     pass  	    	       
 
 
