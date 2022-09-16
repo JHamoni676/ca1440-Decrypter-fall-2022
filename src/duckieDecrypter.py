@@ -23,14 +23,15 @@
 # OTHERWISE, ARISING FROM INDIGNATION, INDIGESTION, INDIFFERENCE, INDECENCY,  	    	       
 # INDENTATION, INDETERMINATION, INTOXICATION, INDOCTRINATION, INTOLERANCE,  	    	       
 # INDULGENCE, INDELICATENESS, INDISCRETION, INEFFECTIVENESS OR IN CONNECTION  	    	       
-# WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  	    	       
-
-
-# Feel free to start from scratch, or repurpouse any of these suggested  	    	       
+# WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+import os
+# Feel free to start from scratch, or repurpouse any of these suggested
 #   functions! The world is yours. Well, maybe that was a bit of an over  	    	       
 #   exaggeration... The world isn't only *yours*, but this file sure is.  	    	       
 # Okay, I actually lied. Please keep the stuff management asks you to at the  	    	       
-#   bottom of the file, in the if __name__ == "__main__": block.  	    	       
+#   bottom of the file, in the if __name__ == "__main__": block.
+
+#//home/jharmon676/cs1440-assn1/data/msg1.txt
 
 import sys  	    	       
 from os import getcwd # do I want anything else from os? Maybe access and R_OK?  	    	       
@@ -101,7 +102,10 @@ PARAMETERS:
 
 RETURNS:  	    	       
   Returns a single decrypted character OR an empty string.  	    	       
-    '''  	    	       
+    '''
+
+
+
     pass  	    	       
 
 
@@ -117,7 +121,26 @@ PARAMETERS:
 
 RETURNS:  	    	       
   Returns a single decrypted character OR an empty string.  	    	       
-    '''  	    	       
+    '''
+    updatedChar = charCode[1:]
+    if ord(updatedChar[0]) == 65:
+        finalCode= updatedChar[1:]
+        asciiCode = int(finalCode) + 32
+        stringA = chr(asciiCode)
+        return stringA
+    elif ord(updatedChar[0]) == 66:
+        finalCode = updatedChar[1:]
+        asciiCode = int(finalCode) + 91
+        stringB = chr(asciiCode)
+        return stringB
+    elif ord(updatedChar[0]) == 67:
+        finalCode = updatedChar[1:]
+        asciiCode = int(finalCode) + 123
+        stringC = chr(asciiCode)
+        return stringC
+    else:
+        return ""
+
     pass  	    	       
 
 
@@ -135,7 +158,16 @@ RETURNS:
     string.  	    	       
 
     '''  	    	       
-    # HINT: "^23"[1:] == "23"  	    	       
+    #HINT: "^23"[1:] == "23"
+    charValue = ord(character[0])
+    if charValue == 43:
+        return convertToSpecialChar(character)
+    elif charValue == 94:
+        return convertToUpper(character)
+    elif charValue == 95:
+        return convertToLower(character)
+    else:
+        return ""
     pass  	    	       
 
 
@@ -150,10 +182,13 @@ PARAMETERS:
 
 RETURNS:  	    	       
   A string that is the decrypted text.  	    	       
-    '''  	    	       
+    '''
 
-    output = ""  	    	       
-    # ...  	    	       
+    output = ""
+    print(line)
+    for i in range(len(line)):
+        #output += decryptCharacter(line[i])
+        output += line[i]
     return output  	    	       
 
 
@@ -174,9 +209,14 @@ RETURNS:
     # os.access might be helpful here!  	    	       
     # I need to open(...) something...  	    	       
     # return file, I think?
+    isValidPath = os.access(pathToFile, os.R_OK)
+    if not isValidPath:
+        sendError()
+    else:
+        file = open(pathToFile)
+        return file
 
-
-    pass  	    	       
+    pass
 
 
 def main(filePath):  	    	       

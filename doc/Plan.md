@@ -47,15 +47,6 @@ The Duckie Decrypter is a program that converts DuckieCrypt to readable text.
 
 # Phase 2: Design *(30%)*
 
-## **Deliver:**
-
-*   Function signatures that include:
-    *   Descriptive names.
-    *   Parameter lists.
-    *   Documentation strings that explain the purpose, inputs and outputs.
-*   Pseudocode that captures how each function works.
-    *   Explain what happens in the face of good and bad input.
-    *   Write a few specific examples that occurred to you.
 
 In the system analysis, it was decided that the program deal with three inputs
 
@@ -63,39 +54,73 @@ In the system analysis, it was decided that the program deal with three inputs
 *   Valid input
 *   Invalid input
 
+
 ````
-def sendError(charCode):
-    
+def converToLower(charCode):
+    remove index[0] from charCode
+    convert remaining string to int
+    add 97 to the int
+    pass into chr() = new string
+    return new string
 
 ````
 
 ````
-def converToLower()
-
-````
-
-````
-def convertToUpper()
+def convertToUpper(charCode):
+    remove index[0] from charCode
+    convert remaining string to int
+    add 65 to the int
+    pass into chr() = new string
+    return new string
 ````
 
 ````
 def convertToSpecialChar(charCode):
+    checks if character is valid duckieCrypt
+    remove index [0] from the character code string
+        #Algorithm to return decrypted string
+    if the ord(initial character) = 65 then group A:
+        remove the grouping character
+        convert remaining string to int
+        add 32 to the int
+        pass into chr() = new string
+        return new string
+    if ord(initial character) = 66 then group B:
+        remove grouping character
+        convert remaining string to int
+        add 91 to int
+        pass into chr() = new string
+        return new string
+    if ord(initial character) = 76 then group C:
+        remove grouping character
+        convert remaining to int
+        add 123 to int
+        pass into chr() = new string
+        retrun new string
+    else:
+        return "" 
 ````
 
 ````
 def decryptCharacter(character):
     for loop to split character to know whether to feed to
-    special, upper, or lower
-
-    calls decrypt[CONVERTFUNCTIONS]
+    convert initial character to int value using ord(character[0]) = charValue
+    if charValue = 43:
+        return convertToSpecialChar(character)
+    if charValue = 94:
+        return convertToUpper(character)
+    if charValue = 95:
+        return convertToLower(character)
+    else:
+        return ""
 ````
 
 ````
 def decryptLine(line):
-    for loop to separate line by spaces
-        builds a list of valid characters
-    
-    
+    initialize empty string output = ""
+    loop through each index of the list line:
+        output += decryptCharacter(line[i])
+    return outpu
 ````
 
 ````
