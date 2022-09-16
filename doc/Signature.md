@@ -9,4 +9,5 @@
 | September 13 | 2.00 hours | Read all of the documents in the instructions folder and worked on Plan.md
 | September 16 | 2.00 hours | Finished plan phases 0-2 started duckieDecrypter.py
 | September 16 | 2.00 hours | Finished plan phases 0-4, finished duckieDecrypter.py
-| TOTAL        | 9.50 hours | Total time of all work done
+| September 16 | 0.50 hours | Finished plan phases 5-6, completed questions and verified
+| TOTAL        | 10.0 hours | Total time of all work done

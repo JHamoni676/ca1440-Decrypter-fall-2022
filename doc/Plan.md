@@ -22,7 +22,7 @@ The Duckie Decrypter is a program that converts DuckieCrypt to readable text.
 
 ### Things I don't know how to do
 
- 
+*   I did not remember how to slice strings correctly to begin with
 
 # Phase 1: System Analysis
 
@@ -155,6 +155,7 @@ def getFile(pathToFile):
 
 *   Refer to working code in ../src/duckieDecrypter.py
 
+
 # Phase 4: Testing & Debugging
 
 ## **Documentation For This Phase:**
@@ -168,6 +169,7 @@ make sure the ascii code stays within the valid duckie crypt bounds.
 When testing with ../data/testing/invalid2.txt I found that the program did not handle a character code
 that did not have a number at the end of a special character identification code
 
+
 # Phase 5: Deployment
 
 ## **Deliver:**
@@ -175,10 +177,11 @@ that did not have a number at the end of a special character identification code
 *   Your repository pushed to GitLab.
 *   **Verify** that your final commit was received by browsing to its project page on GitLab.
     *   Review the project to ensure that all required files are present and in correct locations.
+      *   COMPLETED
 *   **Validate** that your submission is complete and correct by cloning it to a new location on your computer and re-running it.
     *   Run through your test cases to avoid nasty surprises.
+      *   COMPLETED
 
-## Documentation For This Phase
 
 
 # Phase 6: Maintenance
@@ -199,3 +202,11 @@ that did not have a number at the end of a special character identification code
         *   to the next version of Python?
 
 ## Documentation For This Phase
+
+*   The part I am no the happiest about is the convertToSpecialChar() method. I kind of wish I had created a separate method to put to sorting logic in
+*   I know how all of the program works
+*   It would probably take me 20 min to find and fix a bug in a few months
+*   I believe the documentation will make sense to most people, but it could be confusing
+*   I would remember it and understand the documentation
+*   It would probably be a little more then a minor issue to add a feature in a year
+*   I believe that it would keep working, but maybe not 3 or 4 versions of python from now
